@@ -20,3 +20,5 @@ else
   echo "installing git"
   sudo apt install -y git
 fi
+
+ssh-keygen -t ed25519 -f "$HOME/.ssh/id_ed25519" -N ''
