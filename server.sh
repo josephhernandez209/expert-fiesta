@@ -21,4 +21,10 @@ else
   sudo apt install -y git
 fi
 
-ssh-keygen -t ed25519 -f "$HOME/.ssh/id_ed25519" -N ''
+if (stat $HOME/.ssh/id_ed25519)
+then
+  echo "ssh keypair already exists"
+else
+  echo "creating ssh keypair"
+  ssh-keygen -t ed25519 -f "$HOME/.ssh/id_ed25519" -N ''
+fi
